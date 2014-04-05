@@ -462,6 +462,7 @@
 				B5F78FAC18EF71BB008A3427 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B5F78FAD18EF71BB008A3427 /* Build configuration list for PBXNativeTarget "Weather DemoTests" */ = {
 			isa = XCConfigurationList;
@@ -470,6 +471,7 @@
 				B5F78FAF18EF71BB008A3427 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BNViewController : UIViewController
+@interface BNViewController : UIViewController {
+	NSOperationQueue *backgroundQueue;
+}
+
+@property (weak, nonatomic) IBOutlet UILabel *temperatureLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *iconView;
+
+- (UIColor *) colorForCloudCover:(NSNumber *) cloudCover;
+- (UIColor *) colorForTemperature:(NSNumber *) temperature;
 
 @end

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5023" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--class Prefix:identifier View Controller-->
+        <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="BNViewController" sceneMemberID="viewController">
@@ -15,8 +15,34 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="65°" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="diz-rf-GDI">
+                                <rect key="frame" x="91" y="85" width="138" height="96"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="80"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NCk-iS-Eo3">
+                                <rect key="frame" x="91" y="215" width="138" height="138"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.39160163840000001" green="0.39660749429999997" blue="0.41750169840000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="NCk-iS-Eo3" firstAttribute="trailing" secondItem="diz-rf-GDI" secondAttribute="trailing" id="6Bi-Zd-jOB"/>
+                            <constraint firstItem="diz-rf-GDI" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="91" id="H5o-Om-UPE"/>
+                            <constraint firstItem="NCk-iS-Eo3" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="NyM-CU-ehV"/>
+                            <constraint firstItem="diz-rf-GDI" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="65" id="PYB-14-zOV"/>
+                            <constraint firstItem="NCk-iS-Eo3" firstAttribute="top" secondItem="diz-rf-GDI" secondAttribute="bottom" constant="34" id="clV-s3-EKG"/>
+                            <constraint firstItem="NCk-iS-Eo3" firstAttribute="leading" secondItem="diz-rf-GDI" secondAttribute="leading" id="lJj-um-Nso"/>
+                            <constraint firstItem="diz-rf-GDI" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="rdt-ay-NAg"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="iconView" destination="NCk-iS-Eo3" id="bCr-Ls-WhW"/>
+                        <outlet property="temperatureLabel" destination="diz-rf-GDI" id="sSq-fR-dcK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
