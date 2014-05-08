@@ -12,6 +12,7 @@
 
 - (UIColor *)mixColor:(UIColor *)firstColor withColor:(UIColor *)secondColor atPercent:(CGFloat)firstColorPercent;
 - (void)startForecastFetchForLatitude:(CGFloat)latitude andLongitude:(CGFloat)longitude;
+- (CAGradientLayer *)gradientForForecast:(BNForecast *)forecast;
 
 @end
 
@@ -63,25 +64,14 @@
         NSDictionary *forecast = [NSJSONSerialization JSONObjectWithData:data
                                                                  options:kNilOptions
                                                                    error:&localError];
+        self.forecast = [[BNForecast alloc] initWithForecastJson:forecast];
         
-        // Pull out the values we need
-        NSNumber *temp       = [forecast valueForKeyPath:@"currently.apparentTemperature"];
-        NSNumber *cloudCover = [forecast valueForKeyPath:@"currently.cloudCover"];
-        NSString *iconName   = [forecast valueForKeyPath:@"currently.icon"];
-        
-        // Get the colors for the gradient
-        UIColor *topColor    = [self colorForCloudCover:cloudCover];
-        UIColor *bottomColor = [self colorForTemperature:temp];
-        
-        // Build the gradient
-        CAGradientLayer *gradient = [CAGradientLayer layer];
-        gradient.frame = self.view.bounds;
-        gradient.colors = @[(id)[topColor CGColor], (id)[bottomColor CGColor]];
+        CAGradientLayer *gradient = [self gradientForForecast:self.forecast];
         
         // Bounce back to the Main queue for UI updates
         dispatch_async(dispatch_get_main_queue(), ^{
             // Update the temperature label
-            self.temperatureLabel.text = [NSString stringWithFormat:@"%ld°", [temp integerValue]];
+            self.temperatureLabel.text = [self.forecast.temperature stringValue];
             self.temperatureLabel.hidden = NO;
             
             // Pushin in the gradient layer
@@ -89,7 +79,7 @@
             self.view.backgroundColor = [UIColor clearColor];
             
             // Update the forecast image
-            self.iconView.image = [UIImage imageNamed:iconName];
+            self.iconView.image = [UIImage imageNamed:self.forecast.iconName];
         });
         
     }];
@@ -118,6 +108,21 @@
 }
 
 #pragma mark - Color helpers
+
+- (CAGradientLayer *)gradientForForecast:(BNForecast *)forecast
+{
+    // Get the colors for the gradient
+    UIColor *topColor    = [self colorForCloudCover:forecast.cloudCover];
+    UIColor *bottomColor = [self colorForTemperature:forecast.temperature];
+    
+    // Build the gradient
+    CAGradientLayer *gradient = [CAGradientLayer layer];
+    gradient.frame = self.view.bounds;
+    gradient.colors = @[(id)[topColor CGColor], (id)[bottomColor CGColor]];
+    
+    return gradient;
+}
+
 -(UIColor *)colorForCloudCover:(NSNumber *)cloudCover
 {
     CGFloat cloudPercent = [cloudCover floatValue];

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
+#import "BNForecast.h"
 
 @interface BNViewController : UIViewController < CLLocationManagerDelegate > {
 	NSOperationQueue *backgroundQueue;
@@ -22,6 +23,8 @@
 @property (strong, readonly, nonatomic) UIColor *coldTempColor;
 
 @property (strong, nonatomic) CLLocationManager *locationManager;
+
+@property (strong, nonatomic) BNForecast *forecast;
 
 - (UIColor *) colorForCloudCover:(NSNumber *) cloudCover;
 - (UIColor *) colorForTemperature:(NSNumber *) temperature;

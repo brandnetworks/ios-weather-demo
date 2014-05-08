@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D3E99BB191C192A00C16270 /* BNForecast.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D3E99BA191C192A00C16270 /* BNForecast.m */; };
 		B5F78F7C18EF71BA008A3427 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F78F7B18EF71BA008A3427 /* Foundation.framework */; };
 		B5F78F7E18EF71BA008A3427 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F78F7D18EF71BA008A3427 /* CoreGraphics.framework */; };
 		B5F78F8018EF71BA008A3427 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F78F7F18EF71BA008A3427 /* UIKit.framework */; };
@@ -34,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3D3E99B9191C192A00C16270 /* BNForecast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNForecast.h; sourceTree = "<group>"; };
+		3D3E99BA191C192A00C16270 /* BNForecast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNForecast.m; sourceTree = "<group>"; };
 		B5F78F7818EF71BA008A3427 /* Weather Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Weather Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5F78F7B18EF71BA008A3427 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B5F78F7D18EF71BA008A3427 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -115,6 +118,8 @@
 				B5F78F8A18EF71BA008A3427 /* BNAppDelegate.h */,
 				B5F78F8B18EF71BA008A3427 /* BNAppDelegate.m */,
 				B5F78F8D18EF71BA008A3427 /* Main.storyboard */,
+				3D3E99B9191C192A00C16270 /* BNForecast.h */,
+				3D3E99BA191C192A00C16270 /* BNForecast.m */,
 				B5F78F9018EF71BA008A3427 /* BNViewController.h */,
 				B5F78F9118EF71BA008A3427 /* BNViewController.m */,
 				B5F78F9318EF71BA008A3427 /* Images.xcassets */,
@@ -255,6 +260,7 @@
 			files = (
 				B5F78F9218EF71BA008A3427 /* BNViewController.m in Sources */,
 				B5F78F8C18EF71BA008A3427 /* BNAppDelegate.m in Sources */,
+				3D3E99BB191C192A00C16270 /* BNForecast.m in Sources */,
 				B5F78F8818EF71BA008A3427 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
