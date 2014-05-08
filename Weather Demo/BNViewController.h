@@ -26,6 +26,9 @@
 
 @property (strong, nonatomic) BNForecast *forecast;
 
+@property (assign, nonatomic) BOOL useCurrentLocation;
+@property (assign, nonatomic) CLLocationCoordinate2D location;
+
 - (UIColor *) colorForCloudCover:(NSNumber *) cloudCover;
 - (UIColor *) colorForTemperature:(NSNumber *) temperature;
 

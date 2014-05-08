@@ -68,16 +68,23 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    self.locationManager = [[CLLocationManager alloc] init];
-    
-    self.locationManager.delegate = self;
-    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-    
-    [self.locationManager startUpdatingLocation];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    if (self.useCurrentLocation) {
+        self.locationManager = [[CLLocationManager alloc] init];
+        
+        self.locationManager.delegate = self;
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+        
+        [self.locationManager startUpdatingLocation];
+
+    } else {
+        [self startForecastFetchForLatitude:self.location.latitude andLongitude:self.location.longitude];
+    }
 	
 	self.temperatureLabel.hidden = YES;
-	
 }
 
 - (void)didReceiveMemoryWarning
