@@ -18,28 +18,6 @@
 
 @implementation BNViewController
 
-#pragma mark - Color definitions
-
-- (UIColor *)clearSkyColor
-{
-    return [UIColor colorWithRed:0.14 green:0.69 blue:0.91 alpha:1.0];
-}
-
-- (UIColor *)cloudySkyColor
-{
-    return [UIColor colorWithRed:0.48 green:0.43 blue:0.49 alpha:1.0];
-}
-
-- (UIColor *)hotTempColor
-{
-    return [UIColor colorWithRed:1.0 green:0.2 blue:0.0 alpha:1.0];
-}
-
-- (UIColor *)coldTempColor
-{
-    return [UIColor colorWithRed:0.39 green:0.84 blue:0.94 alpha:1.0];
-}
-
 #pragma mark - Location methods
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
@@ -105,6 +83,28 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+}
+
+#pragma mark - Color definitions
+
+- (UIColor *)clearSkyColor
+{
+    return [UIColor colorWithRed:0.14 green:0.69 blue:0.91 alpha:1.0];
+}
+
+- (UIColor *)cloudySkyColor
+{
+    return [UIColor colorWithRed:0.48 green:0.43 blue:0.49 alpha:1.0];
+}
+
+- (UIColor *)hotTempColor
+{
+    return [UIColor colorWithRed:1.0 green:0.2 blue:0.0 alpha:1.0];
+}
+
+- (UIColor *)coldTempColor
+{
+    return [UIColor colorWithRed:0.39 green:0.84 blue:0.94 alpha:1.0];
 }
 
 #pragma mark - Color helpers
