@@ -72,27 +72,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="65°" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="diz-rf-GDI">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="65°" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="diz-rf-GDI">
                                 <rect key="frame" x="91" y="85" width="138" height="96"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="80"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NCk-iS-Eo3">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NCk-iS-Eo3">
                                 <rect key="frame" x="91" y="215" width="138" height="138"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.39160163840000001" green="0.39660749429999997" blue="0.41750169840000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="NCk-iS-Eo3" firstAttribute="trailing" secondItem="diz-rf-GDI" secondAttribute="trailing" id="6Bi-Zd-jOB"/>
-                            <constraint firstItem="diz-rf-GDI" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="91" id="H5o-Om-UPE"/>
-                            <constraint firstItem="NCk-iS-Eo3" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="NyM-CU-ehV"/>
-                            <constraint firstItem="diz-rf-GDI" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="65" id="PYB-14-zOV"/>
-                            <constraint firstItem="NCk-iS-Eo3" firstAttribute="top" secondItem="diz-rf-GDI" secondAttribute="bottom" constant="34" id="clV-s3-EKG"/>
-                            <constraint firstItem="NCk-iS-Eo3" firstAttribute="leading" secondItem="diz-rf-GDI" secondAttribute="leading" id="lJj-um-Nso"/>
-                            <constraint firstItem="diz-rf-GDI" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="rdt-ay-NAg"/>
+                            <constraint firstItem="diz-rf-GDI" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="21" id="8x1-1b-XKC"/>
+                            <constraint firstItem="diz-rf-GDI" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="91" id="FYk-G8-sGf"/>
+                            <constraint firstItem="diz-rf-GDI" firstAttribute="trailing" secondItem="NCk-iS-Eo3" secondAttribute="trailing" id="Nz4-IY-mzd"/>
+                            <constraint firstItem="NCk-iS-Eo3" firstAttribute="leading" secondItem="diz-rf-GDI" secondAttribute="leading" id="RuY-8x-ohT"/>
+                            <constraint firstItem="NCk-iS-Eo3" firstAttribute="top" secondItem="diz-rf-GDI" secondAttribute="bottom" constant="34" id="TOt-Ga-9e6"/>
+                            <constraint firstItem="NCk-iS-Eo3" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="bUd-gF-ZMn"/>
+                            <constraint firstItem="NCk-iS-Eo3" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="xQr-0i-iHe"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="MMG-eB-fJi"/>

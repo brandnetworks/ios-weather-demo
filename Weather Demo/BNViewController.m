@@ -49,7 +49,7 @@
         // Bounce back to the Main queue for UI updates
         dispatch_async(dispatch_get_main_queue(), ^{
             // Update the temperature label
-            self.temperatureLabel.text = [self.forecast.temperature stringValue];
+            self.temperatureLabel.text = [NSString stringWithFormat:@"%ld", self.forecast.temperature.longValue];
             self.temperatureLabel.hidden = NO;
             
             // Pushin in the gradient layer
