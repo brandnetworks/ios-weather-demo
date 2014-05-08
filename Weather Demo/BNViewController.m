@@ -11,10 +11,13 @@
 @interface BNViewController ()
 
 - (UIColor *)mixColor:(UIColor *)firstColor withColor:(UIColor *)secondColor atPercent:(CGFloat)firstColorPercent;
+- (void)startForecastFetchForLatitude:(CGFloat)latitude andLongitude:(CGFloat)longitude;
 
 @end
 
 @implementation BNViewController
+
+#pragma mark - Color definitions
 
 - (UIColor *)clearSkyColor
 {
@@ -36,18 +39,22 @@
     return [UIColor colorWithRed:0.39 green:0.84 blue:0.94 alpha:1.0];
 }
 
-// clear-day, clear-night, rain, snow, sleet, wind, fog, cloudy, partly-cloudy-day, or partly-cloudy-night default
+#pragma mark - Location methods
 
-#pragma mark View Lifecycle Methods
-- (void)viewDidLoad
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
-    [super viewDidLoad];
-	
-	self.temperatureLabel.hidden = YES;
-	
-	backgroundQueue = [[NSOperationQueue alloc] init];
-	
-	NSURL *forecastUrl = [NSURL URLWithString:@"https://api.forecast.io/forecast/2fffadab9510c0beb91ad51e73794403/43.160,-77.615"];\
+    CLLocation *location = [locations lastObject];
+    
+    [self startForecastFetchForLatitude:location.coordinate.latitude andLongitude:location.coordinate.longitude];
+    
+    [self.locationManager stopUpdatingLocation];
+}
+
+#pragma mark - Forecast loading
+
+- (void)startForecastFetchForLatitude:(CGFloat)latitude andLongitude:(CGFloat)longitude
+{
+    NSURL *forecastUrl = [NSURL URLWithString:[NSString stringWithFormat:@"https://api.forecast.io/forecast/2fffadab9510c0beb91ad51e73794403/%lf,%lf", latitude, longitude]];
     
     NSURLSession *session = [NSURLSession sharedSession];
     NSURLSessionDataTask *task = [session dataTaskWithURL:forecastUrl completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
@@ -84,9 +91,25 @@
             // Update the forecast image
             self.iconView.image = [UIImage imageNamed:iconName];
         });
-
+        
     }];
     [task resume];
+}
+
+#pragma mark - View Lifecycle Methods
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    self.locationManager = [[CLLocationManager alloc] init];
+    
+    self.locationManager.delegate = self;
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    
+    [self.locationManager startUpdatingLocation];
+	
+	self.temperatureLabel.hidden = YES;
+	
 }
 
 - (void)didReceiveMemoryWarning

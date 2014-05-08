@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface BNViewController : UIViewController {
+@interface BNViewController : UIViewController < CLLocationManagerDelegate > {
 	NSOperationQueue *backgroundQueue;
 }
 
@@ -19,6 +20,8 @@
 @property (strong, readonly, nonatomic) UIColor *cloudySkyColor;
 @property (strong, readonly, nonatomic) UIColor *hotTempColor;
 @property (strong, readonly, nonatomic) UIColor *coldTempColor;
+
+@property (strong, nonatomic) CLLocationManager *locationManager;
 
 - (UIColor *) colorForCloudCover:(NSNumber *) cloudCover;
 - (UIColor *) colorForTemperature:(NSNumber *) temperature;
