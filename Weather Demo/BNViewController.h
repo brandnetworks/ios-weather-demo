@@ -15,6 +15,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *temperatureLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *iconView;
 
+@property (strong, readonly, nonatomic) UIColor *clearSkyColor;
+@property (strong, readonly, nonatomic) UIColor *cloudySkyColor;
+@property (strong, readonly, nonatomic) UIColor *hotTempColor;
+@property (strong, readonly, nonatomic) UIColor *coldTempColor;
+
 - (UIColor *) colorForCloudCover:(NSNumber *) cloudCover;
 - (UIColor *) colorForTemperature:(NSNumber *) temperature;
 
