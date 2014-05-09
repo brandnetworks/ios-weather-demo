@@ -8,6 +8,7 @@
 
 #import "BNLocationTableViewController.h"
 #import "BNLocation.h"
+#import "BNLocationStore.h"
 #import "BNViewController.h"
 
 @interface BNLocationTableViewController ()
@@ -29,11 +30,9 @@
 {
     [super viewDidLoad];
     
-    self.locations = @[
-                       [[BNLocation alloc] initWithName:@"London" andLatitude:51.508515 andLongitude:-0.125487],
-                       [[BNLocation alloc] initWithName:@"New York" andLatitude:50.705631 andLongitude:-73.978003],
-                       [[BNLocation alloc] initWithName:@"Abu Dhabi" andLatitude:24.466666 andLongitude:54.366666]
-                       ];
+    [BNLocationStore addLocation:[[BNLocation alloc] initWithName:@"London" andLatitude:51.508515 andLongitude:-0.125487]];
+    [BNLocationStore addLocation:[[BNLocation alloc] initWithName:@"New York" andLatitude:50.705631 andLongitude:-73.978003]];
+    [BNLocationStore addLocation:[[BNLocation alloc] initWithName:@"Abu Dhabi" andLatitude:24.466666 andLongitude:54.366666]];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -62,7 +61,7 @@
     if (section == 0) {
         return 1;
     } else {
-        return self.locations.count;
+        return [BNLocationStore locations].count;
     }
 }
 
@@ -74,7 +73,7 @@
     if ([indexPath section] == 0) {
         cell.textLabel.text = @"Current Location";
     } else {
-        cell.textLabel.text = ((BNLocation *)self.locations[indexPath.row]).name;
+        cell.textLabel.text = ((BNLocation *)[BNLocationStore locations][indexPath.row]).name;
     }
     
     return cell;
@@ -125,20 +124,26 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    NSIndexPath *selectedRow = [self.tableView indexPathForSelectedRow];
-    BNViewController *vc = segue.destinationViewController;
-    
-    if ([selectedRow section] == 0) {
-        vc.useCurrentLocation = YES;
-    } else {
-        BNLocation *selectedLocation = self.locations[[selectedRow row]];
+    if ([segue.identifier isEqualToString:@"detailViewSegue"]) {
+        NSIndexPath *selectedRow = [self.tableView indexPathForSelectedRow];
+        BNViewController *vc = segue.destinationViewController;
         
-        vc.useCurrentLocation = NO;
-        vc.location = selectedLocation.location;
+        if ([selectedRow section] == 0) {
+            vc.useCurrentLocation = YES;
+        } else {
+            BNLocation *selectedLocation = [BNLocationStore locations][[selectedRow row]];
+            
+            vc.useCurrentLocation = NO;
+            vc.location = selectedLocation.location;
+        }
     }
-
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+}
+
+- (IBAction)locationAdded:(UIStoryboardSegue *)segue
+{
+    [self.tableView reloadData];
 }
 
 

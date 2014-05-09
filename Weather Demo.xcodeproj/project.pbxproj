@@ -10,6 +10,9 @@
 		3D3E99BB191C192A00C16270 /* BNForecast.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D3E99BA191C192A00C16270 /* BNForecast.m */; };
 		3D3E99BE191C1D4400C16270 /* BNLocationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D3E99BD191C1D4400C16270 /* BNLocationTableViewController.m */; };
 		3D3E99C1191C1D7C00C16270 /* BNLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D3E99C0191C1D7C00C16270 /* BNLocation.m */; };
+		3D3E99C3191C26BC00C16270 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D3E99C2191C26BC00C16270 /* MapKit.framework */; };
+		3D3E99C6191C26E000C16270 /* BNAddLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D3E99C5191C26E000C16270 /* BNAddLocationViewController.m */; };
+		3D3E99C9191C30EC00C16270 /* BNLocationStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D3E99C8191C30EC00C16270 /* BNLocationStore.m */; };
 		B5F78F7C18EF71BA008A3427 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F78F7B18EF71BA008A3427 /* Foundation.framework */; };
 		B5F78F7E18EF71BA008A3427 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F78F7D18EF71BA008A3427 /* CoreGraphics.framework */; };
 		B5F78F8018EF71BA008A3427 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F78F7F18EF71BA008A3427 /* UIKit.framework */; };
@@ -43,6 +46,11 @@
 		3D3E99BD191C1D4400C16270 /* BNLocationTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNLocationTableViewController.m; sourceTree = "<group>"; };
 		3D3E99BF191C1D7C00C16270 /* BNLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNLocation.h; sourceTree = "<group>"; };
 		3D3E99C0191C1D7C00C16270 /* BNLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNLocation.m; sourceTree = "<group>"; };
+		3D3E99C2191C26BC00C16270 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		3D3E99C4191C26E000C16270 /* BNAddLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNAddLocationViewController.h; sourceTree = "<group>"; };
+		3D3E99C5191C26E000C16270 /* BNAddLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNAddLocationViewController.m; sourceTree = "<group>"; };
+		3D3E99C7191C30EC00C16270 /* BNLocationStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNLocationStore.h; sourceTree = "<group>"; };
+		3D3E99C8191C30EC00C16270 /* BNLocationStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNLocationStore.m; sourceTree = "<group>"; };
 		B5F78F7818EF71BA008A3427 /* Weather Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Weather Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5F78F7B18EF71BA008A3427 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B5F78F7D18EF71BA008A3427 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -71,6 +79,7 @@
 			files = (
 				B5F78F7E18EF71BA008A3427 /* CoreGraphics.framework in Frameworks */,
 				B5F78F8018EF71BA008A3427 /* UIKit.framework in Frameworks */,
+				3D3E99C3191C26BC00C16270 /* MapKit.framework in Frameworks */,
 				B5F78F7C18EF71BA008A3427 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -110,6 +119,7 @@
 		B5F78F7A18EF71BA008A3427 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3D3E99C2191C26BC00C16270 /* MapKit.framework */,
 				B5F78F7B18EF71BA008A3427 /* Foundation.framework */,
 				B5F78F7D18EF71BA008A3427 /* CoreGraphics.framework */,
 				B5F78F7F18EF71BA008A3427 /* UIKit.framework */,
@@ -121,6 +131,8 @@
 		B5F78F8118EF71BA008A3427 /* Weather Demo */ = {
 			isa = PBXGroup;
 			children = (
+				3D3E99C4191C26E000C16270 /* BNAddLocationViewController.h */,
+				3D3E99C5191C26E000C16270 /* BNAddLocationViewController.m */,
 				B5F78F8A18EF71BA008A3427 /* BNAppDelegate.h */,
 				B5F78F8B18EF71BA008A3427 /* BNAppDelegate.m */,
 				B5F78F8D18EF71BA008A3427 /* Main.storyboard */,
@@ -134,6 +146,8 @@
 				3D3E99BD191C1D4400C16270 /* BNLocationTableViewController.m */,
 				3D3E99BF191C1D7C00C16270 /* BNLocation.h */,
 				3D3E99C0191C1D7C00C16270 /* BNLocation.m */,
+				3D3E99C7191C30EC00C16270 /* BNLocationStore.h */,
+				3D3E99C8191C30EC00C16270 /* BNLocationStore.m */,
 			);
 			path = "Weather Demo";
 			sourceTree = "<group>";
@@ -217,6 +231,11 @@
 				TargetAttributes = {
 					B5F78F7718EF71BA008A3427 = {
 						DevelopmentTeam = 3CAWZVF959;
+						SystemCapabilities = {
+							com.apple.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					B5F78F9818EF71BB008A3427 = {
 						TestTargetID = B5F78F7718EF71BA008A3427;
@@ -269,6 +288,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5F78F9218EF71BA008A3427 /* BNViewController.m in Sources */,
+				3D3E99C6191C26E000C16270 /* BNAddLocationViewController.m in Sources */,
+				3D3E99C9191C30EC00C16270 /* BNLocationStore.m in Sources */,
 				B5F78F8C18EF71BA008A3427 /* BNAppDelegate.m in Sources */,
 				3D3E99BB191C192A00C16270 /* BNForecast.m in Sources */,
 				B5F78F8818EF71BA008A3427 /* main.m in Sources */,

@@ -12,4 +12,6 @@
 
 @property (nonatomic, strong) NSArray *locations;
 
+- (IBAction)locationAdded:(UIStoryboardSegue *)segue;
+
 @end
