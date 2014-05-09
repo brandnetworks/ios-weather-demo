@@ -13,6 +13,11 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    NSDictionary *apiKeys = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"apiKeys"
+                                                                                                       ofType:@"plist"]];
+    
+    self.forecastKey = [apiKeys objectForKey:@"forecastKey"];
+    
     return YES;
 }
 							

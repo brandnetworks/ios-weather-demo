@@ -7,6 +7,7 @@
 //
 
 #import "BNViewController.h"
+#import "BNAppDelegate.h"
 
 @interface BNViewController ()
 
@@ -33,7 +34,7 @@
 
 - (void)startForecastFetchForLatitude:(CGFloat)latitude andLongitude:(CGFloat)longitude
 {
-    NSURL *forecastUrl = [NSURL URLWithString:[NSString stringWithFormat:@"https://api.forecast.io/forecast/2fffadab9510c0beb91ad51e73794403/%lf,%lf", latitude, longitude]];
+    NSURL *forecastUrl = [NSURL URLWithString:[NSString stringWithFormat:@"https://api.forecast.io/forecast/%@/%lf,%lf", [((BNAppDelegate *)[[UIApplication sharedApplication] delegate]) forecastKey], latitude, longitude]];
     
     NSURLSession *session = [NSURLSession sharedSession];
     NSURLSessionDataTask *task = [session dataTaskWithURL:forecastUrl completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {

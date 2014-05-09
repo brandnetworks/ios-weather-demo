@@ -13,6 +13,7 @@
 		3D3E99C3191C26BC00C16270 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D3E99C2191C26BC00C16270 /* MapKit.framework */; };
 		3D3E99C6191C26E000C16270 /* BNAddLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D3E99C5191C26E000C16270 /* BNAddLocationViewController.m */; };
 		3D3E99C9191C30EC00C16270 /* BNLocationStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D3E99C8191C30EC00C16270 /* BNLocationStore.m */; };
+		3D3E99CB191D1D4600C16270 /* apiKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3D3E99CA191D1D4600C16270 /* apiKeys.plist */; };
 		B5F78F7C18EF71BA008A3427 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F78F7B18EF71BA008A3427 /* Foundation.framework */; };
 		B5F78F7E18EF71BA008A3427 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F78F7D18EF71BA008A3427 /* CoreGraphics.framework */; };
 		B5F78F8018EF71BA008A3427 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F78F7F18EF71BA008A3427 /* UIKit.framework */; };
@@ -51,6 +52,7 @@
 		3D3E99C5191C26E000C16270 /* BNAddLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNAddLocationViewController.m; sourceTree = "<group>"; };
 		3D3E99C7191C30EC00C16270 /* BNLocationStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNLocationStore.h; sourceTree = "<group>"; };
 		3D3E99C8191C30EC00C16270 /* BNLocationStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNLocationStore.m; sourceTree = "<group>"; };
+		3D3E99CA191D1D4600C16270 /* apiKeys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = apiKeys.plist; sourceTree = "<group>"; };
 		B5F78F7818EF71BA008A3427 /* Weather Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Weather Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5F78F7B18EF71BA008A3427 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B5F78F7D18EF71BA008A3427 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -159,6 +161,7 @@
 				B5F78F8418EF71BA008A3427 /* InfoPlist.strings */,
 				B5F78F8718EF71BA008A3427 /* main.m */,
 				B5F78F8918EF71BA008A3427 /* Weather Demo-Prefix.pch */,
+				3D3E99CA191D1D4600C16270 /* apiKeys.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5F78F9418EF71BA008A3427 /* Images.xcassets in Resources */,
+				3D3E99CB191D1D4600C16270 /* apiKeys.plist in Resources */,
 				B5F78F8618EF71BA008A3427 /* InfoPlist.strings in Resources */,
 				B5F78F8F18EF71BA008A3427 /* Main.storyboard in Resources */,
 			);
